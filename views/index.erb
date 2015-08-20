@@ -2,7 +2,7 @@
 
 <h3>Add an option!</h3>
 
-<form action="/new_option" method="post">
+<form action="/new_option" method="post" id="new-option-form">
   <label for="option">Add a new option:</label>
   <input type="text" name="option" id="new-option-field">
   <input type="submit" value="Submit!" id="submit-new-option">
@@ -10,7 +10,7 @@
 
 <h3>Place your votes!</h3>
 
-<form action="/place_vote" method="post">
+<form action="/place_vote" method="post" id="new-vote-form">
   <% vote_options.each do |vote_option| %>
     <label for="choice">
       <input type="radio" name="choice" value="<%= vote_option %>">
@@ -18,12 +18,12 @@
     </label>
     <br />
   <% end %>
-  <input type="submit" value="Vote!">
+  <input type="submit" value="Vote!" id="submit-new-vote">
 </form>
 
 <h3>See the votes!</h3>
 
-<table>
+<table id="votes-count">
   <tr>
     <th>Option</th>
     <th># Votes</th>
